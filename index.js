@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-
-const generate = require('generateIt');
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -13,50 +12,50 @@ const questions = [
     {
         type: 'input',
         name: 'github',
-        message: 'Enter GitHub username'
+        message: 'Enter GitHub username:'
     },
     {
         type: 'input',
-        name: 'name',
-        message: 'Enter email'
+        name: 'email',
+        message: 'Enter email:'
     },
     {
         type: 'input',
-        name: 'name',
-        message: 'Enter title of application'
+        name: 'projectName',
+        message: 'Enter title of application:'
     },
     {
         type: 'input',
-        name: 'name',
-        message: 'Description of app'
+        name: 'description',
+        message: 'Enter a description of this project:'
     },
     {
         type: 'input',
-        name: 'name',
-        message: 'Enter installation instructions'
+        name: 'instillation',
+        message: 'Enter installation instructions:'
     },
     {
         type: 'input',
-        name: 'name',
-        message: 'Contributions'
+        name: 'contribution',
+        message: 'Contributing:'
     },
     {
         type: 'input',
-        name: 'name',
-        message: 'tests'
+        name: 'tests',
+        message: 'Enter any teting information:'
     },
     {
         type: 'input',
-        name: 'name',
-        message: 'licenses',
+        name: 'license',
+        message: 'licenses:',
         choices: ['Apache','GNU', 'ISC', 'MIT', 'Mozilla', 'Perl', 'SIL', 'WTFPL', 'None']
-    },
+    }
 ];
 
 
 // TODO: Create a function to write README file
 const writeToFile = (data) => {
-    fs.writeFile('./filea/README.md', data, (err) => {
+    fs.writeFile('./files/README.md', data, (err) => {
         if (err) {
             return console.log('ERROR DETECTED')
         } else {
@@ -73,10 +72,10 @@ const init = () => {
 // Function call to initialize app
 init()
 .then((userInput) => {
-    return generateIt(userInput)
+    return generateMarkdown(userInput)
 })
 .then((mdInfo) => {
-    return writeToFile(mdInfo)
+return writeToFile(mdInfo)
 })
 .catch((err) => {
     console.log(err)
