@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/baelindsay/README-maker/issues"
   },
-  "homepage": "https://github.com/baelindsay/README-maker#readme"
+  "homepage": "https://github.com/baelindsay/README-maker#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  }
 }
