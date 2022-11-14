@@ -1,6 +1,5 @@
 
 # ReadMe-Generator        
-[![License](https://img.shields.io/badge/license-)]()
 #### A simple application that will create a professional READMe file based on user input.
 ## Table of Contents    
 - [Installation](#installation) 
@@ -14,8 +13,7 @@ It is imperative for user to install npm inquirer version 8.2.4 within your cons
 
 ## Usage
    
-## License
-[![License](https://img.shields.io/badge/license-)]()    
+## License 
 This application is covered under undefined. Please click on the badge for more information    
 ## Contributing
    
@@ -25,6 +23,9 @@ This application is covered under undefined. Please click on the badge for more 
 Have questions? Please feel free to contact me:    
 * GitHub: https://github.com/baelindsay    
 * Email: baelindsay.s@gmail.com    
-## Credits    
+## Credits   
+
+##Walkthrough video
+https://youtu.be/KGzDsmmh0iM
 Created by: lindsay 
   
