@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// const generate = require('generate');
+const generate = require('generateIt');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -55,10 +55,29 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-const writeToFile(fileName, data) {}
+const writeToFile = (data) => {
+    fs.writeFile('./filea/README.md', data, (err) => {
+        if (err) {
+            return console.log('ERROR DETECTED')
+        } else {
+            console.log('Check in the files folder, ya filthy animal')
+        }
+    })
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+const init = () => {
+    return inquirer.prompt(questions)
+}
 
 // Function call to initialize app
-init();
+init()
+.then((userInput) => {
+    return generateIt(userInput)
+})
+.then((mdInfo) => {
+    return writeToFile(mdInfo)
+})
+.catch((err) => {
+    console.log(err)
+})
